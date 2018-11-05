@@ -16,12 +16,16 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
 
     VisualizarPresenter presenter;
 
+    int idAluno;
+
     TextView txtnome, txtDtNasc, txtMatricula, txtCpf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizar);
+
+        idAluno = getIntent().getIntExtra("idAluno", 0);
 
         txtnome = findViewById(R.id.txtNome);
         txtDtNasc = findViewById(R.id.txtDtNascimento);
@@ -30,25 +34,27 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
 
         presenter = new VisualizarPresenter(this, ServiceFactory.create());
 
+        Log.d("ID_Aluno", idAluno+"");
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
 
-        presenter.carregarAluno();
+        presenter.carregarAluno(idAluno);
 
     }
 
     @Override
     public void pegarAluno(Aluno aluno) {
 
-        String nome = aluno.getNome();
-//        int dtNasc = aluno.getDataNascimento();
-//        int matricula = aluno.getMatricula();
-//        String cpf = aluno.getCpf();
 
-        txtnome.setText(nome);
+
+        txtnome.setText(aluno.getNome());
+        txtDtNasc.setText(String.valueOf(aluno.getDataNascimento()));
+        txtMatricula.setText(String.valueOf(aluno.getMatricula()));
+        txtCpf.setText(aluno.getCpf());
 
     }
 }

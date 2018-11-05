@@ -22,14 +22,12 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:text="Caio"
                 android:id="@+id/txtNome"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="10/02/1997"
                 android:id="@+id/txtDtNascimento"/>
 
             <TextView
@@ -37,7 +35,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="17259196"
                 android:id="@+id/txtMatricula"/>
 
 
@@ -47,7 +44,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:text="480.260.038-02"
                 android:id="@+id/txtCpf"/>
 
         </LinearLayout>

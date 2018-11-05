@@ -4,7 +4,6 @@ import android.content.Intent;
 
 import br.com.senaijandira.alunos.model.Aluno;
 import br.com.senaijandira.alunos.service.AlunoService;
-import br.com.senaijandira.alunos.view.MainView;
 import br.com.senaijandira.alunos.view.VisualizarView;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,8 +19,6 @@ public class VisualizarPresenter {
     AlunoService service;
     Intent intent;
 
-    int idAluno = intent.getIntExtra("idAluno", 0);
-
     public VisualizarPresenter(VisualizarView visualizarView, AlunoService service){
 
         this.visualizarView = visualizarView;
@@ -29,7 +26,7 @@ public class VisualizarPresenter {
 
     }
 
-    public void carregarAluno(){
+    public void carregarAluno(int idAluno){
 
         Call<Aluno> call = service.obterAlunoPorId(idAluno);
 
