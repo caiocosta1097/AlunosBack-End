@@ -17,17 +17,15 @@ public class DateUtil {
         return Integer.parseInt(dataFormatada);
     }
 
-    public int convetDate(String data){
+    public String convetDate(String data){
 
-        String[] datadataSplit;
-
-        String dia = data.substring(6, 7);
-        String mes = data.substring(4, 5);
-        String ano = data.substring(0, 3);
+        String dia = data.substring(6, 8);
+        String mes = data.substring(4, 6);
+        String ano = data.substring(0, 4);
 
         String dataFormatada = dia + "/" + mes + "/" + ano;
 
-        return Integer.parseInt(dataFormatada);
+        return dataFormatada;
 
     }
 

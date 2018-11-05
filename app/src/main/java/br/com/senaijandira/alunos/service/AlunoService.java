@@ -12,7 +12,10 @@ import retrofit2.http.Path;
 
 public interface AlunoService {
 
-    String URL_BASE = "http://10.0.2.2:5001/";
+//    String URL_BASE = "http://10.0.2.2:5001/";
+
+    // localhost
+    String URL_BASE = "http://192.168.0.22:5001/";
 
     @GET("/alunos")
     Call<List<Aluno>> obterAlunos();

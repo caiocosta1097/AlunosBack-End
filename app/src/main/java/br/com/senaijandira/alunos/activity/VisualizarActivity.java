@@ -10,6 +10,7 @@ import br.com.senaijandira.alunos.model.Aluno;
 import br.com.senaijandira.alunos.presenter.VisualizarPresenter;
 import br.com.senaijandira.alunos.service.AlunoService;
 import br.com.senaijandira.alunos.service.ServiceFactory;
+import br.com.senaijandira.alunos.util.DateUtil;
 import br.com.senaijandira.alunos.view.VisualizarView;
 
 public class VisualizarActivity extends AppCompatActivity implements VisualizarView {
@@ -49,10 +50,10 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
     @Override
     public void pegarAluno(Aluno aluno) {
 
-
+        String dataConvertida = new DateUtil().convetDate(String.valueOf(aluno.getDataNascimento()));
 
         txtnome.setText(aluno.getNome());
-        txtDtNasc.setText(String.valueOf(aluno.getDataNascimento()));
+        txtDtNasc.setText(dataConvertida);
         txtMatricula.setText(String.valueOf(aluno.getMatricula()));
         txtCpf.setText(aluno.getCpf());
 
