@@ -8,7 +8,6 @@ import android.widget.TextView;
 import br.com.senaijandira.alunos.R;
 import br.com.senaijandira.alunos.model.Aluno;
 import br.com.senaijandira.alunos.presenter.VisualizarPresenter;
-import br.com.senaijandira.alunos.service.AlunoService;
 import br.com.senaijandira.alunos.service.ServiceFactory;
 import br.com.senaijandira.alunos.util.DateUtil;
 import br.com.senaijandira.alunos.view.VisualizarView;
@@ -19,7 +18,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
 
     int idAluno;
 
-    TextView txtnome, txtDtNasc, txtMatricula, txtCpf;
+    TextView txtnome, txtDtNasc, txtMatricula, txtCpf, txtMedia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +31,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         txtDtNasc = findViewById(R.id.txtDtNascimento);
         txtMatricula = findViewById(R.id.txtMatricula);
         txtCpf = findViewById(R.id.txtCpf);
+        txtMedia = findViewById(R.id.txtMedia);
 
         presenter = new VisualizarPresenter(this, ServiceFactory.create());
 
@@ -56,6 +56,7 @@ public class VisualizarActivity extends AppCompatActivity implements VisualizarV
         txtDtNasc.setText(dataConvertida);
         txtMatricula.setText(String.valueOf(aluno.getMatricula()));
         txtCpf.setText(aluno.getCpf());
+        txtMedia.setText("7.5");
 
     }
 }

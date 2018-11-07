@@ -1,7 +1,5 @@
 package br.com.senaijandira.alunos.presenter;
 
-import android.content.Intent;
-
 import br.com.senaijandira.alunos.model.Aluno;
 import br.com.senaijandira.alunos.service.AlunoService;
 import br.com.senaijandira.alunos.view.VisualizarView;
@@ -17,7 +15,6 @@ public class VisualizarPresenter {
 
     VisualizarView visualizarView;
     AlunoService service;
-    Intent intent;
 
     public VisualizarPresenter(VisualizarView visualizarView, AlunoService service){
 
